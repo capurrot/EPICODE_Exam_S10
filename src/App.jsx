@@ -6,14 +6,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import SearchWeather from "./component/SearchWeather";
 import { useState } from "react";
 import DetailComponent from "./component/DetailComponent";
+import LogoComponent from "./component/LogoComponent";
 
 function App() {
   const [city, setCity] = useState("");
   return (
     <>
       <BrowserRouter>
+        <LogoComponent />
         <SearchComponent setCity={setCity} />
-
         <Routes>
           <Route path="/" element={<LocalWeather />} />
 

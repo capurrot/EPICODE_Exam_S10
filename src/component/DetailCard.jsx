@@ -59,7 +59,7 @@ const DetailCard = (props) => {
   };
 
   return (
-    <Card className="citycard my-5">
+    <Card className="citycard my-2">
       <Card.Body>
         <Card.Title className="yellowcolombia mb-3">{dayofWeek[new Date(props.date).getDay()]}</Card.Title>
         <Card.Text className="text-light text-center mb-5 iconweather">{myWeatherIcon(props.icon)}</Card.Text>

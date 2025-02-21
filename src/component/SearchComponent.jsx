@@ -17,7 +17,7 @@ const SearchComponent = ({ setCity }) => {
   return (
     <div className="pt-3">
       <Form
-        className="containersearch d-flex mx-auto p-2 rounded-pill border border-2 border-light"
+        className="containersearch d-flex mx-auto p-2 rounded-pill border border-2 border-light my-3"
         onSubmit={handleSearch}
       >
         <InputGroup className="align-items-center justify-content-between px-2">

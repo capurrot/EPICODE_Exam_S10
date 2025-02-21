@@ -73,7 +73,7 @@ const DetailComponent = () => {
   };
 
   return (
-    <Container fluid className="mt-4">
+    <Container fluid className="pt-5">
       <h3 className="display-5">
         {cityName}
         <span className="ps-2" style={{ fontSize: "1rem" }}>

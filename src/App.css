@@ -70,6 +70,13 @@ così anche da testare la veradicità di queste previsioni :-) */
   font-weight: bold !important;
   background-color: rgb(206, 17, 22) !important;
   border: 2px solid rgb(206, 17, 22) !important;
+  transition: 0.2s linear;
+}
+
+.btncolombia:hover {
+  color: rgb(0, 56, 147) !important;
+  background-color: rgb(252, 209, 22) !important;
+  border: 2px solid rgb(252, 209, 22) !important;
 }
 
 .imgcity {
