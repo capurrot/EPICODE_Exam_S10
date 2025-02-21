@@ -88,3 +88,16 @@ così anche da testare la veradicità di queste previsioni :-) */
   width: calc(50% - 0.25rem);
   border-radius: 5px;
 }
+
+.local {
+  background-color: #00000049;
+  margin-inline: 0.8rem !important;
+  padding-inline: 2rem;
+  border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+  .mx-city {
+    margin-inline: auto !important;
+  }
+}
