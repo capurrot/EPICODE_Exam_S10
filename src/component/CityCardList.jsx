@@ -7,8 +7,8 @@ const CityCardList = () => {
       <Container fluid className="mt-auto">
         <h3 className="display-5">
           Meteo della Colombia
-          <span className="ps-2" style={{ fontSize: "1rem" }}>
-            (per appassionati come me)
+          <span className="ps-2 d-none d-lg-inline" style={{ fontSize: "1rem" }}>
+            (per appassionati di quella nazione come me)
           </span>
         </h3>
         <Row xs={1} sm={2} md={3} xxl={6}>

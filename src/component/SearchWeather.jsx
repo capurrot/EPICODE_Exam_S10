@@ -120,8 +120,8 @@ const SearchWeather = (props) => {
       <Container fluid className="mt-4">
         <h3 className="display-5">
           Meteo Ricercato
-          <span className="ps-2" style={{ fontSize: "1rem" }}>
-            (posizione in base alla ricerca)
+          <span className="ps-2 d-none d-lg-inline" style={{ fontSize: "1rem" }}>
+            (posizione in base alla ricerca e orario locale)
           </span>
         </h3>
       </Container>

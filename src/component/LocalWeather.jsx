@@ -108,9 +108,9 @@ const LocalWeather = () => {
     <>
       <Container fluid className="mt-4">
         <h3 className="display-5">
-          Meteo Attuale
-          <span className="ps-2" style={{ fontSize: "1rem" }}>
-            (posizione e orario locali)
+          Meteo Locale
+          <span className="ps-2 d-none d-lg-inline" style={{ fontSize: "1rem" }}>
+            (posizione recuperata dal browser e orario locale)
           </span>
         </h3>
       </Container>
