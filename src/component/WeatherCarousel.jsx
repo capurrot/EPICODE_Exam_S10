@@ -87,7 +87,7 @@ function WeatherCarousel(props) {
 
   return (
     <>
-      <h2>Le prossime 24 ore</h2>
+      <h2 className="border-top pt-2">Le prossime 24 ore</h2>
       <Carousel className="mt-2" style={{ height: "200px" }}>
         <Carousel.Item interval={10000}>
           <h3>

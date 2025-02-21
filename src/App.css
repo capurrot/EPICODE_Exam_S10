@@ -96,6 +96,16 @@ così anche da testare la veradicità di queste previsioni :-) */
   border-radius: 5px;
 }
 
+.linktodetail {
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.2s linear;
+}
+
+.linktodetail:hover {
+  color: rgb(252, 209, 22);
+}
+
 @media (max-width: 992px) {
   .mx-city {
     margin-inline: auto !important;

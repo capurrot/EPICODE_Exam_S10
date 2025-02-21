@@ -7,6 +7,7 @@ import { BsDropletHalf, BsWind } from "react-icons/bs";
 import WeatherCarousel from "./WeatherCarousel";
 import { Container } from "react-bootstrap";
 import CityCardList from "./CityCardList";
+import { Link } from "react-router";
 
 const SearchWeather = (props) => {
   const [cityName, setCityName] = useState("");
@@ -143,6 +144,9 @@ const SearchWeather = (props) => {
           </span>
         </p>
         <WeatherCarousel lat={lat} lon={lon} />
+        <Link className="text-end mb-3 linktodetail" to={`/detail/${cityName.toLowerCase().replace(/\s+/g, "-")}`}>
+          Vai al dettaglio del meteo
+        </Link>
       </div>
       <CityCardList />
     </>
