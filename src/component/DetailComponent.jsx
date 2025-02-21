@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 import DetailCard from "./DetailCard";
+import ArrowBack from "./ArrowBack";
 
 const DetailComponent = () => {
   const location = useLocation();
@@ -78,7 +79,12 @@ const DetailComponent = () => {
         {cityName}
         <span className="ps-2 d-none d-lg-inline" style={{ fontSize: "1rem" }}>
           (Dettaglio del meteo della città - 5 giorni)
-        </span>{" "}
+        </span>
+        <span className="float-end" style={{ fontSize: "2rem" }}>
+          <Link to="/" className="linktodetail" title="Torna alla home">
+            <ArrowBack />
+          </Link>
+        </span>
       </h3>
       <Row xs={1} md={2} xl={5}>
         {forecast.length > 0 &&

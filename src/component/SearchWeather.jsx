@@ -8,6 +8,7 @@ import WeatherCarousel from "./WeatherCarousel";
 import { Container } from "react-bootstrap";
 import CityCardList from "./CityCardList";
 import { Link } from "react-router";
+import ArrowBack from "./ArrowBack";
 
 const SearchWeather = (props) => {
   const [cityName, setCityName] = useState("");
@@ -122,6 +123,11 @@ const SearchWeather = (props) => {
           Meteo Ricercato
           <span className="ps-2 d-none d-lg-inline" style={{ fontSize: "1rem" }}>
             (posizione in base alla ricerca e orario locale)
+          </span>
+          <span className="float-end" style={{ fontSize: "2rem" }}>
+            <Link to="/" className="linktodetail" title="Torna alla home">
+              <ArrowBack />
+            </Link>
           </span>
         </h3>
       </Container>
