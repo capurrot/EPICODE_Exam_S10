@@ -28,3 +28,25 @@ body {
   left: 0;
   z-index: -1;
 }
+
+.containersearch {
+  max-width: 300px;
+  background-color: #ffffff52;
+}
+
+.searchlocation {
+  background: transparent;
+  color: #ffffff;
+  border: none !important;
+  outline: none;
+}
+
+.searchlocation::placeholder {
+  color: #ffffff;
+}
+
+.btnsearch {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+}
