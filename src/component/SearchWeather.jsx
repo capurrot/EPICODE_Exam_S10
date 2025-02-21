@@ -8,7 +8,7 @@ import WeatherCarousel from "./WeatherCarousel";
 import { Container } from "react-bootstrap";
 import CityCardList from "./CityCardList";
 
-const LocalWeather = () => {
+const SearchWeather = (props) => {
   const [cityName, setCityName] = useState("");
   const clientKeyOpenWeather = "3645d6cc7680ee79d5d7b340b121b16f";
   const [lat, setLat] = useState(null);
@@ -20,20 +20,9 @@ const LocalWeather = () => {
   const [wind, setWind] = useState("");
 
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLat(position.coords.latitude);
-          setLon(position.coords.longitude);
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-    } else {
-      console.log("Il tuo browser non è supportato");
-    }
-  }, []);
+    fetchLatLon();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.city]);
 
   useEffect(() => {
     if (lat !== null && lon !== null) {
@@ -42,6 +31,29 @@ const LocalWeather = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lat, lon]);
 
+  const fetchLatLon = async () => {
+    try {
+      const resp = await fetch(
+        `https://api.openweathermap.org/geo/1.0/direct?q=${props.city}&limit=1&appid=${clientKeyOpenWeather}`
+      );
+      if (resp.ok) {
+        const myLatLon = await resp.json();
+        console.log(myLatLon);
+        if (myLatLon[0].local_names === undefined) {
+          setCityName(myLatLon[0].name);
+        } else {
+          setCityName(myLatLon[0].local_names.it);
+        }
+        setLat(myLatLon[0].lat);
+        setLon(myLatLon[0].lon);
+      } else {
+        throw new Error("Errore nel recupero dell'immagine della città");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const fetchWeather = async () => {
     try {
       const resp = await fetch(
@@ -49,7 +61,7 @@ const LocalWeather = () => {
       );
       if (resp.ok) {
         const myWeather = await resp.json();
-
+        console.log(myWeather);
         const imgIcon = myWeather.weather[0].icon;
 
         setIconImg(`http://openweathermap.org/img/wn/${imgIcon}@2x.png`);
@@ -57,7 +69,6 @@ const LocalWeather = () => {
         setTemperature(myWeather.main.temp);
         setHumidity(myWeather.main.humidity);
         setWind(myWeather.wind.speed);
-        setCityName(myWeather.name);
 
         switch (imgIcon) {
           case "01n":
@@ -107,9 +118,9 @@ const LocalWeather = () => {
     <>
       <Container fluid className="mt-4">
         <h3 className="display-5">
-          Meteo Attuale
+          Meteo Ricercato
           <span className="ps-2" style={{ fontSize: "1rem" }}>
-            (posizione e orario locali)
+            (posizione in base alla ricerca)
           </span>
         </h3>
       </Container>
@@ -138,4 +149,4 @@ const LocalWeather = () => {
   );
 };
 
-export default LocalWeather;
+export default SearchWeather;

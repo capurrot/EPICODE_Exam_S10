@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import sun from "../assets/sun.png";
 import fewClouds from "../assets/few_clouds.png";
@@ -8,6 +7,7 @@ import BrokenClouds from "../assets/broken_clouds.png";
 import Mist from "../assets/mist.png";
 import { Placeholder } from "react-bootstrap";
 import { BsDropletHalf, BsWind } from "react-icons/bs";
+import { Link } from "react-router";
 
 function CityCard(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -82,7 +82,7 @@ function CityCard(props) {
       );
       if (resp.ok) {
         const myWeather = await resp.json();
-        console.log(myWeather);
+
         const imgIcon = myWeather.weather[0].icon;
 
         setIconImg(`http://openweathermap.org/img/wn/${imgIcon}@2x.png`);
@@ -178,7 +178,17 @@ function CityCard(props) {
             {wind.toLocaleString("it-IT")} km/h
           </span>
         </Card.Text>
-        <Button className="btncolombia w-100">Vai al dettaglio del meteo</Button>
+        {/* Codice trovato su stackoverflow per impostare lettere non accentate */}
+        <Link
+          to={`/detail/${cityName
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+            .replace(/\s+/g, "-")}`}
+          className="btn btncolombia w-100"
+        >
+          Vai al dettaglio del meteo
+        </Link>
       </Card.Body>
     </Card>
   );
