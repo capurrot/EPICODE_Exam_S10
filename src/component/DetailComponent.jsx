@@ -76,7 +76,7 @@ const DetailComponent = () => {
     <Container fluid className="pt-5">
       <h3 className="display-5">
         {cityName}
-        <span className="ps-2" style={{ fontSize: "1rem" }}>
+        <span className="ps-2 d-none d-lg-inline" style={{ fontSize: "1rem" }}>
           (Dettaglio del meteo della città - 5 giorni)
         </span>{" "}
       </h3>
