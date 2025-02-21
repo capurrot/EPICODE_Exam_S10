@@ -65,6 +65,10 @@ così anche da testare la veradicità di queste previsioni :-) */
   margin-bottom: 0 !important;
 }
 
+.redcolombia {
+  color: rgb(206, 17, 22);
+}
+
 .btncolombia {
   color: #ffffff !important;
   font-weight: bold !important;

@@ -7,6 +7,7 @@ import SearchWeather from "./component/SearchWeather";
 import { useState } from "react";
 import DetailComponent from "./component/DetailComponent";
 import LogoComponent from "./component/LogoComponent";
+import NotFound from "./component/NotFound";
 
 function App() {
   const [city, setCity] = useState("");
@@ -26,6 +27,7 @@ function App() {
             <Route path="/search" element={<SearchWeather city={city} />} />
           )}
           <Route path="/detail/:city" element={<DetailComponent />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
