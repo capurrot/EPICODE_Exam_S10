@@ -11,6 +11,7 @@ const DetailComponent = () => {
   const [lat, setLat] = useState(null);
   const [lon, setLon] = useState(null);
   const [forecast, setForecast] = useState([]);
+  const [hourlyWeather, setHourlyWeather] = useState([]);
 
   useEffect(() => {
     fetchLatLon();
@@ -57,9 +58,9 @@ const DetailComponent = () => {
       );
       if (resp.ok) {
         const myWeather = await resp.json();
-        console.log(myWeather);
-
-        const dayWeather = myWeather.list.filter((item) => item.dt_txt.includes("12:00:00"));
+        const hourlyWeather = [...myWeather.list];
+        setHourlyWeather(hourlyWeather);
+        const dayWeather = myWeather.list.filter((date) => date.dt_txt.includes("12:00:00"));
         setForecast(dayWeather);
       } else {
         throw new Error("Errore nel recupero del meteo della città");
@@ -100,6 +101,7 @@ const DetailComponent = () => {
                 humidity={listItem.main.humidity}
                 wind={listItem.wind.speed}
                 icon={listItem.weather[0].icon}
+                hourlyWeather={hourlyWeather}
               />
             </Col>
           ))}

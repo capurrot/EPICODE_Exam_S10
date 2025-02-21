@@ -19,9 +19,15 @@ import i13n from "../assets/13d.png";
 import i13d from "../assets/13d.png";
 import i50n from "../assets/50d.png";
 import i50d from "../assets/50d.png";
+import ModalComponent from "./ModalComponent";
+import { useState } from "react";
 
 const DetailCard = (props) => {
+  const [show, setShow] = useState(false);
   const dayofWeek = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
+
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
 
   const myWeatherIcon = (imgIcon) => {
     switch (imgIcon) {
@@ -157,32 +163,43 @@ const DetailCard = (props) => {
   };
 
   return (
-    <Card className="citycard my-2">
-      <Card.Body>
-        <Card.Title className="yellowcolombia mb-3">{dayofWeek[new Date(props.date).getDay()]}</Card.Title>
-        <Card.Text className="text-light text-center mb-5 iconweather">{myWeatherIcon(props.icon)}</Card.Text>
-        <Card.Text className="d-flex display-4 justify-content-center text-light mb-5">
-          {props.temperature} °C
-        </Card.Text>
-        <Card.Text className="text-light d-flex justify-content-between text-center my-4">
-          <span className="humwind">
-            <strong>Umidità</strong>
-            <br />
-            <BsDropletHalf className="my-3" />
-            <br />
-            {props.humidity} %
-          </span>
-          <span className="humwind">
-            <strong>Vento</strong>
-            <br />
-            <BsWind className="my-3" />
-            <br />
-            {props.wind.toLocaleString("it-IT")} km/h
-          </span>
-        </Card.Text>
-        <Button className="btncolombia w-100">Dettaglio orario</Button>
-      </Card.Body>
-    </Card>
+    <>
+      <Card className="citycard my-2">
+        <Card.Body>
+          <Card.Title className="yellowcolombia mb-3">{dayofWeek[new Date(props.date).getDay()]}</Card.Title>
+          <Card.Text className="text-light text-center mb-5 iconweather">{myWeatherIcon(props.icon)}</Card.Text>
+          <Card.Text className="d-flex display-4 justify-content-center text-light mb-5">
+            {props.temperature} °C
+          </Card.Text>
+          <Card.Text className="text-light d-flex justify-content-between text-center my-4">
+            <span className="humwind">
+              <strong>Umidità</strong>
+              <br />
+              <BsDropletHalf className="my-3" />
+              <br />
+              {props.humidity} %
+            </span>
+            <span className="humwind">
+              <strong>Vento</strong>
+              <br />
+              <BsWind className="my-3" />
+              <br />
+              {props.wind.toLocaleString("it-IT")} km/h
+            </span>
+          </Card.Text>
+          <Button className="btncolombia w-100" onClick={handleShow}>
+            Dettaglio orario
+          </Button>
+        </Card.Body>
+      </Card>
+      <ModalComponent
+        show={show}
+        onHide={handleClose}
+        hourlyWeather={props.hourlyWeather}
+        date={props.date}
+        giorno={dayofWeek[new Date(props.date).getDay()]}
+      />
+    </>
   );
 };
 
