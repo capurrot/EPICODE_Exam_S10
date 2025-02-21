@@ -92,14 +92,11 @@ function WeatherCarousel(props) {
         <Carousel.Item interval={10000}>
           <h3>
             {forecast.length > 0
-              ? forecast[0].dt_txt.slice(8, 10) +
-                "/" +
-                forecast[0].dt_txt.slice(5, 7) +
-                "/" +
-                forecast[0].dt_txt.slice(0, 4) +
-                " ore " +
-                forecast[0].dt_txt.slice(11, 16)
+              ? forecast[0].dt_txt.slice(8, 10) === String(new Date().getDate())
+                ? "oggi"
+                : "domani"
               : ""}
+            {forecast.length > 0 ? " alle " + forecast[0].dt_txt.slice(11, 16) : ""}
           </h3>
           <p>
             {forecast.length > 0 && myWeatherIcon(forecast[0].weather[0].icon)}
@@ -109,14 +106,11 @@ function WeatherCarousel(props) {
         <Carousel.Item>
           <h3>
             {forecast.length > 0
-              ? forecast[1].dt_txt.slice(8, 10) +
-                "/" +
-                forecast[1].dt_txt.slice(5, 7) +
-                "/" +
-                forecast[1].dt_txt.slice(0, 4) +
-                " ore " +
-                forecast[1].dt_txt.slice(11, 16)
+              ? forecast[1].dt_txt.slice(8, 10) === String(new Date().getDate())
+                ? "oggi"
+                : "domani"
               : ""}
+            {forecast.length > 0 ? " alle " + forecast[1].dt_txt.slice(11, 16) : ""}
           </h3>
           <p>
             {forecast.length > 0 && myWeatherIcon(forecast[1].weather[0].icon)}
@@ -126,14 +120,11 @@ function WeatherCarousel(props) {
         <Carousel.Item>
           <h3>
             {forecast.length > 0
-              ? forecast[2].dt_txt.slice(8, 10) +
-                "/" +
-                forecast[2].dt_txt.slice(5, 7) +
-                "/" +
-                forecast[2].dt_txt.slice(0, 4) +
-                " ore " +
-                forecast[2].dt_txt.slice(11, 16)
+              ? forecast[2].dt_txt.slice(8, 10) === String(new Date().getDate())
+                ? "oggi"
+                : "domani"
               : ""}
+            {forecast.length > 0 ? " alle " + forecast[2].dt_txt.slice(11, 16) : ""}
           </h3>
           <p>
             {forecast.length > 0 && myWeatherIcon(forecast[2].weather[0].icon)}
@@ -143,14 +134,11 @@ function WeatherCarousel(props) {
         <Carousel.Item>
           <h3>
             {forecast.length > 0
-              ? forecast[3].dt_txt.slice(8, 10) +
-                "/" +
-                forecast[3].dt_txt.slice(5, 7) +
-                "/" +
-                forecast[3].dt_txt.slice(0, 4) +
-                " ore " +
-                forecast[3].dt_txt.slice(11, 16)
+              ? forecast[3].dt_txt.slice(8, 10) === String(new Date().getDate())
+                ? "oggi"
+                : "domani"
               : ""}
+            {forecast.length > 0 ? " alle " + forecast[3].dt_txt.slice(11, 16) : ""}
           </h3>
           <p>
             {forecast.length > 0 && myWeatherIcon(forecast[3].weather[0].icon)}
@@ -160,14 +148,11 @@ function WeatherCarousel(props) {
         <Carousel.Item>
           <h3>
             {forecast.length > 0
-              ? forecast[4].dt_txt.slice(8, 10) +
-                "/" +
-                forecast[4].dt_txt.slice(5, 7) +
-                "/" +
-                forecast[4].dt_txt.slice(0, 4) +
-                " ore " +
-                forecast[4].dt_txt.slice(11, 16)
+              ? forecast[4].dt_txt.slice(8, 10) === String(new Date().getDate())
+                ? "oggi"
+                : "domani"
               : ""}
+            {forecast.length > 0 ? " alle " + forecast[4].dt_txt.slice(11, 16) : ""}
           </h3>
           <p>
             {forecast.length > 0 && myWeatherIcon(forecast[4].weather[0].icon)}
@@ -177,14 +162,11 @@ function WeatherCarousel(props) {
         <Carousel.Item>
           <h3>
             {forecast.length > 0
-              ? forecast[5].dt_txt.slice(8, 10) +
-                "/" +
-                forecast[5].dt_txt.slice(5, 7) +
-                "/" +
-                forecast[5].dt_txt.slice(0, 4) +
-                " ore " +
-                forecast[5].dt_txt.slice(11, 16)
+              ? forecast[5].dt_txt.slice(8, 10) === String(new Date().getDate())
+                ? "oggi"
+                : "domani"
               : ""}
+            {forecast.length > 0 ? " alle " + forecast[5].dt_txt.slice(11, 16) : ""}
           </h3>
           <p>
             {forecast.length > 0 && myWeatherIcon(forecast[5].weather[0].icon)}
@@ -194,14 +176,11 @@ function WeatherCarousel(props) {
         <Carousel.Item>
           <h3>
             {forecast.length > 0
-              ? forecast[6].dt_txt.slice(8, 10) +
-                "/" +
-                forecast[6].dt_txt.slice(5, 7) +
-                "/" +
-                forecast[6].dt_txt.slice(0, 4) +
-                " ore " +
-                forecast[6].dt_txt.slice(11, 16)
+              ? forecast[6].dt_txt.slice(8, 10) === String(new Date().getDate())
+                ? "oggi"
+                : "domani"
               : ""}
+            {forecast.length > 0 ? " alle " + forecast[6].dt_txt.slice(11, 16) : ""}
           </h3>
           <p>
             {forecast.length > 0 && myWeatherIcon(forecast[6].weather[0].icon)}
@@ -211,14 +190,11 @@ function WeatherCarousel(props) {
         <Carousel.Item>
           <h3>
             {forecast.length > 0
-              ? forecast[7].dt_txt.slice(8, 10) +
-                "/" +
-                forecast[7].dt_txt.slice(5, 7) +
-                "/" +
-                forecast[7].dt_txt.slice(0, 4) +
-                " ore " +
-                forecast[7].dt_txt.slice(11, 16)
+              ? forecast[7].dt_txt.slice(8, 10) === String(new Date().getDate())
+                ? "oggi"
+                : "domani"
               : ""}
+            {forecast.length > 0 ? " alle " + forecast[7].dt_txt.slice(11, 16) : ""}
           </h3>
           <p>
             {forecast.length > 0 && myWeatherIcon(forecast[7].weather[0].icon)}
