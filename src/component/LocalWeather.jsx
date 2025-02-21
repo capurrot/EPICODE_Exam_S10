@@ -6,6 +6,7 @@ import BrokenClouds from "../assets/broken_clouds.png";
 import { BsDropletHalf, BsWind } from "react-icons/bs";
 
 import { Container } from "react-bootstrap";
+import WeatherCarousel from "./WeatherCarousel";
 
 const LocalWeather = () => {
   const [cityName, setCityName] = useState("");
@@ -130,6 +131,7 @@ const LocalWeather = () => {
             {wind.toLocaleString("it-IT")} km/h
           </span>
         </p>
+        <WeatherCarousel lat={lat} lon={lon} />
       </div>
     </>
   );
