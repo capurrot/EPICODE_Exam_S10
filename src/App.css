@@ -50,3 +50,41 @@ body {
   border: none;
   color: #ffffff;
 }
+
+.citycard {
+  background: rgba(0, 56, 147, 0.76) !important;
+}
+
+/* Tengo a specificare che non ho utilizzato questo colori per rendere simile la pagina ad alcuni siti di viaggio
+ma perchè sono i colori principali della bandiera colombiana. Adoro questo paese e spero di fare un viaggio presto
+così anche da testare la veradicità di queste previsioni :-) */
+
+.yellowcolombia {
+  color: rgb(252, 209, 22) !important;
+  height: 3rem;
+  margin-bottom: 0 !important;
+}
+
+.btncolombia {
+  color: #ffffff !important;
+  font-weight: bold !important;
+  background-color: rgb(206, 17, 22) !important;
+  border: 2px solid rgb(206, 17, 22) !important;
+}
+
+.imgcity {
+  height: 200px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.iconweather {
+  height: 5.5rem;
+}
+
+.humwind {
+  background-color: rgba(252, 209, 22, 0.2);
+  padding: 1rem;
+  width: calc(50% - 0.25rem);
+  border-radius: 5px;
+}
