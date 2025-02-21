@@ -75,17 +75,21 @@ const DetailComponent = () => {
 
   return (
     <Container fluid className="pt-5">
-      <h3 className="display-5">
-        {cityName}
-        <span className="ps-2 d-none d-lg-inline" style={{ fontSize: "1rem" }}>
-          (Dettaglio del meteo della città - 5 giorni)
-        </span>
-        <span className="float-end" style={{ fontSize: "2rem" }}>
+      <div className="d-flex justify-content-between">
+        <h3 className="display-5">
+          {cityName}
+          <span className="ps-2 d-none d-lg-inline" style={{ fontSize: "1rem" }}>
+            (Dettaglio del meteo della città - 5 giorni)
+          </span>
+        </h3>
+        <div className="float-end pt-2" style={{ fontSize: "2rem" }}>
           <Link to="/" className="linktodetail" title="Torna alla home">
             <ArrowBack />
+            <span className="ps-2 d-none d-lg-inline">Torna alla homepage</span>
           </Link>
-        </span>
-      </h3>
+        </div>
+      </div>
+
       <Row xs={1} md={2} xl={5}>
         {forecast.length > 0 &&
           forecast.map((listItem, i) => (

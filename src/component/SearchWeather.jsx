@@ -119,17 +119,20 @@ const SearchWeather = (props) => {
   return (
     <>
       <Container fluid className="pt-5">
-        <h3 className="display-5">
-          Meteo Ricercato
-          <span className="ps-2 d-none d-lg-inline" style={{ fontSize: "1rem" }}>
-            (posizione in base alla ricerca e orario locale)
-          </span>
-          <span className="float-end" style={{ fontSize: "2rem" }}>
+        <div className="d-flex justify-content-between">
+          <h3 className="display-5">
+            Meteo Ricercato
+            <span className="ps-2 d-none d-lg-inline" style={{ fontSize: "1rem" }}>
+              (posizione in base alla ricerca e orario locale)
+            </span>
+          </h3>
+          <div className="float-end pt-2" style={{ fontSize: "2rem" }}>
             <Link to="/" className="linktodetail" title="Torna alla home">
               <ArrowBack />
+              <span className="ps-2 d-none d-lg-inline">Torna alla homepage</span>
             </Link>
-          </span>
-        </h3>
+          </div>
+        </div>
       </Container>
 
       <div className="mb-4 local d-block d-lg-flex flex-column text-center">
