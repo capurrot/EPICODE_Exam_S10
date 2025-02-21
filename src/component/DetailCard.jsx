@@ -1,10 +1,24 @@
 import Card from "react-bootstrap/Card";
 import { BsDropletHalf, BsWind } from "react-icons/bs";
-import sun from "../assets/sun.png";
-import fewClouds from "../assets/few_clouds.png";
-import Clouds from "../assets/clouds.png";
-import BrokenClouds from "../assets/broken_clouds.png";
 import { Button } from "react-bootstrap";
+import i01n from "../assets/01d.png";
+import i01d from "../assets/01d.png";
+import i02n from "../assets/02d.png";
+import i02d from "../assets/02d.png";
+import i03n from "../assets/03d.png";
+import i03d from "../assets/03d.png";
+import i04n from "../assets/04d.png";
+import i04d from "../assets/04d.png";
+import i09n from "../assets/09d.png";
+import i09d from "../assets/09d.png";
+import i10n from "../assets/10d.png";
+import i10d from "../assets/10d.png";
+import i11n from "../assets/11d.png";
+import i11d from "../assets/11d.png";
+import i13n from "../assets/13d.png";
+import i13d from "../assets/13d.png";
+import i50n from "../assets/50d.png";
+import i50d from "../assets/50d.png";
 
 const DetailCard = (props) => {
   const dayofWeek = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
@@ -14,43 +28,127 @@ const DetailCard = (props) => {
       case "01n":
         return (
           <>
-            <img src={sun} alt="Weather Icon" className="d-flex mx-auto" width={100} />
-            <span>Soleggiato</span>
+            <img src={i01n} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Cielo sereno</span>
+          </>
+        );
+      case "01d":
+        return (
+          <>
+            <img src={i01d} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Cielo sereno</span>
+          </>
+        );
+      case "02n":
+        return (
+          <>
+            <img src={i02n} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Poco nuvoloso</span>
           </>
         );
       case "02d":
         return (
           <>
-            <img src={fewClouds} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <img src={i02d} alt="Weather Icon" className="d-flex mx-auto" width={100} />
             <span>Poco nuvoloso</span>
-          </>
-        );
-      case "03d":
-        return (
-          <>
-            <img src={Clouds} alt="Weather Icon" className="d-flex mx-auto" width={100} />
-            <span>Nuvoloso</span>
           </>
         );
       case "03n":
         return (
           <>
-            <img src={Clouds} alt="Weather Icon" className="d-flex mx-auto" width={100} />
-            <span>Nuvoloso</span>
+            <img src={i03n} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Nuvoloso sparso</span>
           </>
         );
-      case "04d":
+      case "03d":
         return (
           <>
-            <img src={BrokenClouds} alt="Weather Icon" className="d-flex mx-auto" width={100} />
-            <span>Molto nuvoloso</span>
+            <img src={i03d} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Nuvoloso sparso</span>
           </>
         );
       case "04n":
         return (
           <>
-            <img src={BrokenClouds} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <img src={i04n} alt="Weather Icon" className="d-flex mx-auto" width={100} />
             <span>Molto nuvoloso</span>
+          </>
+        );
+      case "04d":
+        return (
+          <>
+            <img src={i04d} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Molto nuvoloso</span>
+          </>
+        );
+      case "09n":
+        return (
+          <>
+            <img src={i09n} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Pioggia a tratti</span>
+          </>
+        );
+      case "09d":
+        return (
+          <>
+            <img src={i09d} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Pioggia a tratti</span>
+          </>
+        );
+      case "10n":
+        return (
+          <>
+            <img src={i10n} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Pioggia</span>
+          </>
+        );
+      case "10d":
+        return (
+          <>
+            <img src={i10d} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Pioggia</span>
+          </>
+        );
+      case "11n":
+        return (
+          <>
+            <img src={i11n} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Temporale</span>
+          </>
+        );
+      case "11d":
+        return (
+          <>
+            <img src={i11d} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Temporale</span>
+          </>
+        );
+      case "13n":
+        return (
+          <>
+            <img src={i13n} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Neve</span>
+          </>
+        );
+      case "13d":
+        return (
+          <>
+            <img src={i13d} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Neve</span>
+          </>
+        );
+      case "50n":
+        return (
+          <>
+            <img src={i50n} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Nebbia</span>
+          </>
+        );
+      case "50d":
+        return (
+          <>
+            <img src={i50d} alt="Weather Icon" className="d-flex mx-auto" width={100} />
+            <span>Nebbia</span>
           </>
         );
       default:

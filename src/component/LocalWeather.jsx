@@ -1,13 +1,27 @@
 import { useEffect, useState } from "react";
-import sun from "../assets/sun.png";
-import fewClouds from "../assets/few_clouds.png";
-import Clouds from "../assets/clouds.png";
-import BrokenClouds from "../assets/broken_clouds.png";
 import { BsDropletHalf, BsWind } from "react-icons/bs";
 import WeatherCarousel from "./WeatherCarousel";
 import { Container } from "react-bootstrap";
 import CityCardList from "./CityCardList";
 import { Link } from "react-router";
+import i01n from "../assets/01d.png";
+import i01d from "../assets/01d.png";
+import i02n from "../assets/02d.png";
+import i02d from "../assets/02d.png";
+import i03n from "../assets/03d.png";
+import i03d from "../assets/03d.png";
+import i04n from "../assets/04d.png";
+import i04d from "../assets/04d.png";
+import i09n from "../assets/09d.png";
+import i09d from "../assets/09d.png";
+import i10n from "../assets/10d.png";
+import i10d from "../assets/10d.png";
+import i11n from "../assets/11d.png";
+import i11d from "../assets/11d.png";
+import i13n from "../assets/13d.png";
+import i13d from "../assets/13d.png";
+import i50n from "../assets/50d.png";
+import i50d from "../assets/50d.png";
 
 const LocalWeather = () => {
   const [cityName, setCityName] = useState("");
@@ -62,32 +76,77 @@ const LocalWeather = () => {
 
         switch (imgIcon) {
           case "01n":
-            setIconImg(sun);
-            setDescWeather("Cielo limpido");
+            setIconImg(i01n);
+            setDescWeather("Cielo sereno");
             break;
           case "01d":
-            setIconImg(sun);
-            setDescWeather("Cielo limpido");
+            setIconImg(i01d);
+            setDescWeather("Cielo sereno");
             break;
-          case "02d":
-            setIconImg(fewClouds);
+          case "02n":
+            setIconImg(i02n);
             setDescWeather("Poco nuvoloso");
             break;
-          case "03d":
-            setIconImg(Clouds);
-            setDescWeather("Nuvoloso");
+          case "02d":
+            setIconImg(i02d);
+            setDescWeather("Poco nuvoloso");
             break;
           case "03n":
-            setIconImg(Clouds);
-            setDescWeather("Nuvoloso");
+            setIconImg(i03n);
+            setDescWeather("Nuvoloso sparso");
             break;
-          case "04d":
-            setIconImg(BrokenClouds);
-            setDescWeather("Molto nuvoloso");
+          case "03d":
+            setIconImg(i03d);
+            setDescWeather("Nuvoloso sparso");
             break;
           case "04n":
-            setIconImg(BrokenClouds);
+            setIconImg(i04n);
             setDescWeather("Molto nuvoloso");
+            break;
+          case "04d":
+            setIconImg(i04d);
+            setDescWeather("Molto nuvoloso");
+            break;
+          case "09n":
+            setIconImg(i09n);
+            setDescWeather("Pioggia a tratti");
+            break;
+          case "09d":
+            setIconImg(i09d);
+            setDescWeather("Pioggia a tratti");
+            break;
+          case "10n":
+            setIconImg(i10n);
+            setDescWeather("Pioggia");
+            break;
+          case "10d":
+            setIconImg(i10d);
+            setDescWeather("Pioggia");
+            break;
+          case "11n":
+            setIconImg(i11n);
+            setDescWeather("Temporale");
+            break;
+          case "11d":
+            setIconImg(i11d);
+            setDescWeather("Temporale");
+            break;
+          case "13n":
+            setIconImg(i13n);
+            setDescWeather("Neve");
+            break;
+          case "13d":
+            setIconImg(i13d);
+            setDescWeather("Neve");
+            break;
+
+          case "50n":
+            setIconImg(i50n);
+            setDescWeather("Nebbia");
+            break;
+          case "50d":
+            setIconImg(i50d);
+            setDescWeather("Nebbia");
             break;
           default:
             break;
