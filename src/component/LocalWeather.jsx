@@ -74,6 +74,9 @@ const LocalWeather = () => {
         setWind(myWeather.wind.speed);
         setCityName(myWeather.name);
 
+        /*Volevo fare le icone diverse sia per giorno che per notte ma il tempo non era abbastanza e così le 
+        ho lasciato solo quello del giorno */
+
         switch (imgIcon) {
           case "01n":
             setIconImg(i01n);

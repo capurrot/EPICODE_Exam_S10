@@ -49,6 +49,7 @@ function CityCard(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lat, lon]);
 
+  /* Imposto una immagine per ogni città segnata nella card da unsplash */
   const fetchImage = async () => {
     try {
       const resp = await fetch(
