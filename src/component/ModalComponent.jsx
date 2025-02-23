@@ -1,8 +1,8 @@
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
-import i01n from "../assets/01d.png";
+import i01n from "../assets/01n.png";
 import i01d from "../assets/01d.png";
-import i02n from "../assets/02d.png";
+import i02n from "../assets/02n.png";
 import i02d from "../assets/02d.png";
 import i03n from "../assets/03d.png";
 import i03d from "../assets/03d.png";
