@@ -196,13 +196,31 @@ function CityCard(props) {
     return k ? (k - 273.15).toFixed(1) : "";
   };
 
+  /*Volevo impostare dei placeholder. Ora cerco di renderli più graficamente simili a quelle create con la fetch */
   return isLoading ? (
     <Card className="shadow-sm">
+      <Placeholder as={Card.Img} style={{ height: "200px" }} />
       <Card.Body>
         <Placeholder as={Card.Title} animation="wave">
-          <Placeholder xs={6} />
+          <Placeholder xs={10} />
         </Placeholder>
         <Placeholder as={Card.Text} animation="wave"></Placeholder>
+        <Placeholder as={Card.Text} animation="wave">
+          <Placeholder xs={4} className="mx-auto d-block" style={{ height: "80px" }} />
+        </Placeholder>
+        <Placeholder as={Card.Text} animation="wave">
+          <Placeholder xs={4} className="mx-auto d-block" />
+        </Placeholder>
+        <Placeholder as={Card.Text} animation="wave">
+          <Placeholder xs={6} className="mx-auto d-block" style={{ height: "80px" }} />
+        </Placeholder>
+        <Placeholder as={Card.Text} animation="wave">
+          <Placeholder xs={5} className="rounded" style={{ height: "128px" }} />
+          <Placeholder xs={5} className="float-end rounded" style={{ height: "128px" }} />
+        </Placeholder>
+        <Placeholder as={Card.Text} animation="wave">
+          <Placeholder xs={12} className="rounded" style={{ height: "40px" }} />
+        </Placeholder>
       </Card.Body>
     </Card>
   ) : (
