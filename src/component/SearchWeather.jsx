@@ -55,8 +55,8 @@ const SearchWeather = (props) => {
       if (resp.ok) {
         const myLatLon = await resp.json();
         console.log(myLatLon);
-        if (myLatLon[0].local_names === undefined) {
-          setCityName(myLatLon[0].name);
+        if (myLatLon[0]?.local_names?.it === undefined) {
+          setCityName(myLatLon[0]?.name || "Città non disponibile");
         } else {
           setCityName(myLatLon[0].local_names.it);
         }
@@ -196,7 +196,10 @@ const SearchWeather = (props) => {
 
       <div className="mb-4 local d-block d-lg-flex flex-column text-center">
         <p className="pt-2 d-block d-lg-flex justify-content-between align-items-center">
-          <span className="d-block d-lg-flex display-4 text-center">{cityName}</span>
+          <span className="d-block d-lg-flex display-4 text-center">
+            {console.log(cityName)}
+            {cityName}
+          </span>
           {iconImg && <img src={iconImg} alt="Weather Icon" className="d-flex mx-city" width={100} />}
           <span>{descWeather}</span>
           <span className="d-flex display-4 justify-content-center">{convertToCelsius(parseInt(temperature))} °C</span>

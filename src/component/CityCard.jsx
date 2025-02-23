@@ -74,8 +74,8 @@ function CityCard(props) {
       );
       if (resp.ok) {
         const myLatLon = await resp.json();
-        if (myLatLon[0].local_names === undefined) {
-          setCityName(myLatLon[0].name);
+        if (myLatLon[0]?.local_names?.es === undefined) {
+          setCityName(myLatLon[0]?.name || "Città non disponibile");
         } else {
           setCityName(myLatLon[0].local_names.es);
         }

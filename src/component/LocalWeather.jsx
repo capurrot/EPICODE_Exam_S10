@@ -72,8 +72,11 @@ const LocalWeather = () => {
         setTemperature(myWeather.main.temp);
         setHumidity(myWeather.main.humidity);
         setWind(myWeather.wind.speed);
-        setCityName(myWeather.name);
-
+        if (myWeather?.local_names?.it === undefined) {
+          setCityName(myWeather?.name || "Città non disponibile");
+        } else {
+          setCityName(myWeather.local_names.it);
+        }
         /*Volevo fare le icone diverse sia per giorno che per notte ma il tempo non era abbastanza e così le 
         ho lasciato solo quello del giorno */
 
